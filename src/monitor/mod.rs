@@ -154,6 +154,7 @@ async fn check(client: &reqwest::Client, config: &ServiceConfig) -> Check {
         Err(err) if err.is_connect() => (Health::Down, "conn failed".into(), None),
         Err(err) => (Health::Down, err.to_string(), None),
     };
+    tracing::info!(service = %config.name, health = ?health, detail = %detail, latency = ?latency, "checked service");
 
     Check {
         health,
