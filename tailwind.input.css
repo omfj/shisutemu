@@ -1,0 +1,24 @@
+@import "tailwindcss" source(none);
+@source "./src/**/*.rs";
+
+@theme {
+  --font-sans:
+    ui-sans-serif, system-ui, "Hiragino Sans", "Noto Sans JP", "Yu Gothic",
+    sans-serif;
+
+  --color-brand: #002cf9;
+  --color-up: #5bfa4d;
+  --color-slow: #ff9a00;
+  --color-down: #ff002c;
+  --color-pending: #e4e4e4;
+  --color-notice: #f9ea00;
+
+  --shadow-hard: 6px 6px 0 0 var(--color-black);
+  --shadow-hard-sm: 3px 3px 0 0 var(--color-black);
+  --shadow-extrude:
+    1px 1px 0 0 var(--color-black), 2px 2px 0 0 var(--color-black),
+    3px 3px 0 0 var(--color-black), 4px 4px 0 0 var(--color-black),
+    5px 5px 0 0 var(--color-black), 6px 6px 0 0 var(--color-black),
+    7px 7px 0 0 var(--color-black), 8px 8px 0 0 var(--color-black),
+    9px 9px 0 0 var(--color-black), 10px 10px 0 0 var(--color-black);
+}

@@ -1,0 +1,32 @@
+name = "My example status"
+description = "See the health of all of our wonderful services!"
+
+#banner = "Planned maintenance Saturday 10:00–12:00 UTC" # optional announcement
+
+# Port for the status page. `PORT` environment variable takes precedence.
+# Default is 3000.
+port = 3000
+
+# Where the 24 hour history is saved so it survives restarts. Defaults to "shisutemu.json".
+#state_file = "history.json"
+
+# At least one service is required.
+[[service]]
+name = "Example"
+url = "https://example.com"
+interval_secs = 30          # how often to check (default 30)
+slow_ms = 500               # slower than this is orange (default 1000)
+timeout_ms = 5000           # slower than this is red (default 10000)
+
+[[service]]
+name = "Not found"
+url = "https://httpbin.org/status/404"
+
+[[service]]
+name = "Slow"
+url = "https://httpbin.org/delay/2"
+slow_ms = 1000
+
+[[service]]
+name = "Unreachable"
+url = "http://127.0.0.1:1"
