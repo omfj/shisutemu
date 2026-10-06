@@ -5,6 +5,7 @@ fn main() {
 
     println!("cargo:rerun-if-changed=src");
     println!("cargo:rerun-if-changed=tailwind.input.css");
+    println!("cargo:rerun-if-changed=static/styles.css");
     println!("cargo:rerun-if-env-changed=TAILWINDCSS");
 
     let input = manifest_dir.join("tailwind.input.css");
